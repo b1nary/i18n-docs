@@ -21,7 +21,7 @@ module I18nDocs
 
 
     def write_to_csv
-      main_locale = @locales.include?('en') ? 'en' : @locales.first
+      main_locale = @locales.include?((I18nDocs.default_locale || 'en')) ? (I18nDocs.default_locale || 'en') : @locales.first
 
       puts "    #{@source_file}: write CSV to '#{@output_file}' \n\n"
 

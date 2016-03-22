@@ -6,6 +6,10 @@ require 'i18n_docs/csv_to_yaml'
 require 'i18n_docs/translations'
 require 'i18n_docs/translation_file_export'
 
+module I18nDocs
+  class << self; attr_accessor :default_locale; end
+end
+
 if defined?(Rails)
   class I18nDocs::Railtie < Rails::Railtie
     rake_tasks do
@@ -13,4 +17,3 @@ if defined?(Rails)
     end
   end
 end
-

@@ -32,7 +32,7 @@ namespace :i18n do
     output_dir  = Rails.root.join('tmp')
     locales     = I18n.available_locales
 
-    input_files = Dir[File.join(source_dir, ENV['locale'] || 'en', '*.yml')]
+    input_files = Dir[File.join(source_dir, ENV['locale'] || (I18nDocs.default_locale || 'en'), '*.yml')]
 
     puts ""
     puts "  Detected locales: #{locales}"
@@ -54,5 +54,3 @@ namespace :i18n do
   end
 
 end
-
-
